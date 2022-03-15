@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 //App para hallar el cuadrado y el cubo de un número
-//Se lanza y se ejecuta con http://localhost:8080 o la URL específica al proveedor cloud
+//Se lanza y se ejecuta con http://localhost:8080
 @SpringBootApplication
 @RestController
 public class ProtobootappApplication {
@@ -37,7 +37,7 @@ public class ProtobootappApplication {
         return String.format("El cuadrado de %f es %f", numero, this.calculadora.cuadrado(numero));
     }
     
-    //Se ejecuta con http://localhost:8080/cubo o http://localhost:8080/cubo?numero=5
+    //Se debe ejecutar con http://localhost:8080/cubo o http://localhost:8080/cubo?numero=5
     @GetMapping("/cubo")
     public String cubo(@RequestParam(value = "numero", defaultValue = "0") Double numero) {
         this.calculadora = new Calculadora();
